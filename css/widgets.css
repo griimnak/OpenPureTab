@@ -1,0 +1,136 @@
+/*
+
+  Background
+
+*/
+.fullscreenOverlay {
+  z-index: 8;
+  position: absolute;
+  top: 0;
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(40,40,40, 0.9)
+}
+
+
+/*
+
+  Digital clock
+
+*/
+.digitalclock {
+  position: absolute;
+  top:0;
+  width: 100%;
+}
+
+.digitalclock h1{
+  padding-top: 20vh;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+/*
+
+  Top sites styles
+
+*/
+.topsites-chrome {
+  display:table;
+  margin: 0 auto;
+  padding-top: 60px;
+  max-width: 664px;
+}
+
+.topsites-chrome .tile {
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+  display:inline-block;
+  text-decoration: none;
+  margin: 5px;
+  vertical-align: top;
+  white-space: nowrap;
+  font-size: 12px;
+  cursor: pointer;
+  transition-duration: 200ms;
+  transition-property: transform, box-shadow, margin, opacity, width;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgb(250,250,250);
+  width: 154px;
+  height: 128px;
+}
+
+/* Ball Style */
+.topsites-ball {
+  display:table;
+  margin: 0 auto;
+  padding-top: 60px;
+  max-width: 664px;
+}
+
+.topsites-ball .tile {
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+  border-radius: 64px;
+  overflow: hidden;
+  position: relative;
+  display:inline-block;
+  text-decoration: none;
+  margin: 5px;
+  vertical-align: top;
+  white-space: nowrap;
+  font-size: 12px;
+  cursor: pointer;
+  transition-duration: 200ms;
+  transition-property: transform, box-shadow, margin, opacity, width;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgb(250,250,250);
+  width: 121px;
+  height: 121px;
+}
+
+.topsites-ball a {
+  padding-top: 52px;
+  padding-left: 56px;
+}
+
+/* Style1 Top */
+.topsites-style1-top {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 18;
+  min-height: 30px;
+}
+.topsites-style1-top .inner { padding-top: 2px; color: #fff; }
+
+.topsites-style1-top a {
+  text-decoration: none;
+  color: #efefef;
+  padding-left: 20px;
+}
+
+.topsites-style1-top a:hover { color: #fff; }
+
+/* Style1 Bottom */
+.topsites-style1-bottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 18;
+  min-height: 30px;
+}
+.topsites-style1-bottom .inner { padding-top: 2px; color: #fff; }
+
+.topsites-style1-bottom a {
+  text-decoration: none;
+  color: #efefef;
+  padding-left: 20px;
+}
+
+.topsites-style1-bottom a:hover { color: #fff; }

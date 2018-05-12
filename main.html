@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="utf-8">
+  <title>New Tab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="vendor/ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="vendor/skeleton/normalize.css">
+  <link rel="stylesheet" href="vendor/skeleton/skeleton.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="css/widgets.css">
+</head>
+<body>
+  <div id="overlay">
+
+  </div>
+
+  <div class="content">
+    <!-- Settings -->
+    <a class="settingsIcon" id="settings">
+      <i class="ion-android-settings"></i>
+    </a>
+
+    <div id="settingsModal" style="display:none;" class="modal fadeInLoad">
+      <div class="settingsBox">
+        <h4>General</h4>
+        <p>All general settings are displayed below.</p>
+        <form name="settings">
+          <div class="row">
+            <div class="two columns">Name</div>
+            <div class="ten columns">
+              <input name="name" placeholder="User" class="u-full-width" type="text"/>
+              <b class="hint">How should you be addressed as?</b>
+            </div>
+          </div>
+          <div class="row">
+            <div class="two columns">Location</div>
+            <div class="ten columns">
+              <input name="location" placeholder="02913" class="u-full-width" type="text"/>
+              <b class="hint">Enter your zip code. You may leave this empty if you don't plan on using the weather widget.</b>
+            </div>
+          </div>
+          <div class="row">
+            <div class="two columns">Theme</div>
+            <div class="ten columns">
+              <select class="u-full-width" id="theme">
+                <option value="default">Light (default)</option>
+                <option value="dark">Dark</option>
+              </select>
+              <b class="hint">This will affect the main widgets and controls of the extension.</b>
+            </div>
+          </div>
+          <div class="row">
+            <div class="two columns">Background</div>
+            <div class="ten columns">
+              <select class="u-full-width" id="bgtype">
+                <option value="default">None (default)</option>
+                <option value="image">Image</option>
+                <option value="color">Hex / RGB(A) / Color</option>
+              </select>
+              <b class="hint">Apply a custom background.</b>
+              <!-- Options -->
+              <div id="bgsettings">
+
+              </div>
+            </div>
+          </div>
+        <h4>Widgets</h4>
+        <p>All settings related to widgets and the management of widgets are displayed below.</p>
+          <div class="row">
+            <div class="two columns">Top sites</div>
+            <div class="ten columns">
+              <select class="u-full-width" id="widget_topsites">
+                <option value="disabled">Disabled (default)</option>
+                <option value="enabled_default">Default Chrome look</option>
+                <option value="enabled_ball">Ball style</option>
+                <option value="enabled_style1_bottom">style1 to bottom</option>
+                <option value="enabled_style1_top">style1 to top</option>
+              </select>
+              <b class="hint">Apply a custom frequent sites style, or disable the widget entirely.</b>
+            </div>
+          </div>
+          <div class="row">
+            <div class="two columns">Clock</div>
+            <div class="ten columns">
+              <select class="u-full-width" id="widget_clock">
+                <option value="disabled">Disabled (default)</option>
+                <option value="enabled_style1">Enabled style1</option>
+              </select>
+              <b class="hint">Apply a custom clock style or disable the clock entirely.</b>
+            </div>
+          </div>
+
+          <div class="row v-space">
+            <button id="submit_button" class="u-pull-right button-primary">Update</button>
+            <a id="cancel_button" class="button">Close</a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="digitalclock">
+      <div class="digitalclock">
+        <h1 id="clocktext">10:40 PM</h1>
+      </div>
+    </div>
+
+    <!-- Search -->
+    <div class="search">
+      <input id="search" type="text" name="search" placeholder="Search or type URL"/>
+    </div>
+
+    <!-- Topsites Widget -->
+    <div id="topsites" class="topsites">
+
+
+    </div>
+  </div>
+
+  <script type="text/javascript" src="js/setup.js"></script>
+  <script type="text/javascript" src="js/widget-system.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+  <script type="text/javascript" src="js/background.js"></script>
+
+  <script type="text/javascript" src="js/widgets/clock.js"></script>
+  <script type="text/javascript" src="js/widgets/topsites.js"></script>
+</body>
+</html>
