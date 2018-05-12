@@ -10,7 +10,7 @@ Key Features
 &#10004; Lightweight, dependency free<br />
 &#10004; Plenty of customization<br />
 &#10004; Simple and straight to the point, not in your face<br />
-
+<br/>
 
 
 Showcase (version 1.0)
@@ -28,12 +28,7 @@ Showcase (version 1.0)
 ![Alt Text](https://image.prntscr.com/image/Ia3itpmxQYONuRwKF9v3Fg.png)
 
 
-
-![Alt Text](
-![Alt Text](
-![Alt Text](
-
-<br/>
+<br/><br/>
 Dev Installation
 -------------------
 - Clone or Download this repository.
