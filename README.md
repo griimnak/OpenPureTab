@@ -1,6 +1,5 @@
-<p align="center">
-    <h1>OpenPureTab</h1>
-</p>
+<h1 align="center">OpenPureTab</h1>
+
 
 [![stability-experimental](https://img.shields.io/badge/stability-experimental-orange.svg)](https://github.com/emersion/stability-badges#experimental)
 
@@ -9,7 +8,7 @@
 OpenPureTab is an extension for Chrome-based browsers that replaces the default new-tab page with a free and open sourced one, with tons of customization.
 
 I started this project because I wanted to add some aesthetics to my new tab page without compromising my privacy or security to shady extensions on the Chrome Web Store.
-###### (https://chrome.google.com/webstore/search/new tab)
+###### (https://chrome.google.com/webstore/search/new_tab)
 
 Key Features
 -------------------
