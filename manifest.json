@@ -9,7 +9,6 @@
     "newtab": "main.html"
   },
 
-  // Required for proper functionality
   "permissions": [
     "storage",
     "topSites"
