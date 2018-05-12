@@ -11,6 +11,29 @@ Key Features
 &#10004; Plenty of customization<br />
 &#10004; Simple and straight to the point, not in your face<br />
 
+
+
+Showcase (version 1.0)
+-------------------
+###### Image background + Style1 bottom
+![Alt Text](https://image.prntscr.com/image/PLwVi63RRuGI-TwLCP9nxw.png)
+
+###### Image background + Chrome style
+![Alt Text](https://image.prntscr.com/image/VpkYV8SHSJmYYwk161BI8g.png)
+
+###### Color background + Style1 top
+![Alt Text](https://image.prntscr.com/image/F0luCx_ySYyD21m11Pc7tw.png)
+
+###### Color background + Chrome style
+![Alt Text](https://image.prntscr.com/image/Ia3itpmxQYONuRwKF9v3Fg.png)
+
+
+
+![Alt Text](
+![Alt Text](
+![Alt Text](
+
+<br/>
 Dev Installation
 -------------------
 - Clone or Download this repository.
