@@ -1,13 +1,19 @@
-function finalizeSetup() {
-  var form = document.forms['setup'];
+/*
 
+  Get form data and validate inputs
+
+*/
+function finalizeSetup() {
+  // Grab form data
+  var form = document.forms['setup'];
   var name = form['name'].value;
   var location = form['location'].value;
   var theme = form['theme'].value;
 
   if (name == '' || theme == '') {
-    alert('One or more fields have been left blank.');
+    flash('One or more required fields have been left blank.');
   } else {
+    // Optional fallback
     if (location == '') {
       location = "New York"
     } else {
@@ -15,6 +21,7 @@ function finalizeSetup() {
     }
 
     var keys =
+    // Set default keys
     {
       "name": name,
       "location": location,
@@ -29,21 +36,29 @@ function finalizeSetup() {
     };
 
     chrome.storage.sync.set(keys, function() {
-      alert('Welcome, '+name+'.');
+      flash('Welcome to OpenPureTab, '+name+'.');
+      setTimeout(function(){window.location.href = 'main.html';}, 2500);
     });
 
   }
 }
 
+
+/*
+
+  Draw first time setup
+
+*/
 function openSetupScreen() {
   document.body.innerHTML = html;
 
   var createButton = document.getElementById('submit_button');
-  createButton.addEventListener('click', function() { finalizeSetup(); });
+  createButton.addEventListener('click', function(event) { event.preventDefault(); finalizeSetup(); });
 }
 
 var html = `
 <div class="modal">
+  <div id="flashes"></div>
   <div class="setupBox">
     <h4>First time setup</h4>
     <p>Before we begin, let's get some basic information.</p>
@@ -76,3 +91,47 @@ var html = `
   </div>
 </div>
 `;
+
+
+/*
+
+  Global message flashing
+
+*/
+function flash(message) {
+  if (!chrome.storage.local) {
+    alert("Local storage is not accessible :(");
+  }
+  // Set flash message
+  chrome.storage.local.set({"flashed_msg":message}, function() {
+    chrome.storage.local.get({"flashed_msg":message}, function(data) {
+      if (!isEmpty(data.flashed_msg)) {
+        console.log('==> flash();');
+        var html = `<div class="show" id="snackbar">${data.flashed_msg}</div>`;
+        document.getElementById("flashes").innerHTML = html;
+      }
+    });
+  });
+
+  // Remove html and clear local storage after 3 seconds
+  function remove() {
+    console.log('==> remove();')
+    chrome.storage.local.clear(function() {
+      var error = chrome.runtime.lastError;
+      if (error) { console.error(error) }
+      var msgbox = document.getElementById("snackbar");
+      msgbox.classList.remove("show");
+    });
+  }
+
+  setTimeout(function(){ remove() }, 3000);
+
+  function isEmpty(obj) {
+    for(var key in obj) {
+      if(obj.hasOwnProperty(key)) {
+        return false;
+      }
+    }
+    return true;
+  }
+}
