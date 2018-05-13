@@ -57,4 +57,3 @@ Dev Installation
 - Once finished, click the gear at the top right to configure.
 
 ![Alt Text](https://image.prntscr.com/image/2-Vx51ynSTCitvrDb2603A.png)
-![Alt Text](https://image.prntscr.com/image/9CekKTPnQOusTNkapZwOyA.png)
