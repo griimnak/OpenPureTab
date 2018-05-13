@@ -42,17 +42,19 @@ Showcase (version 1.0)
 <br/><br/>
 Dev Installation
 -------------------
+![Alt Text](https://image.prntscr.com/image/NsEaWmfASQSl3X3oZGy9sw.png)
+
 - Clone or Download this repository.
 
 - Navigate to `chrome://extensions` in your chrome-based browser.
 
 - Enable `developer mode`
-![Alt Text](https://image.prntscr.com/image/NsEaWmfASQSl3X3oZGy9sw.png)
 
 - Click `Load unpacked extensions...` and select the folder that contains OpenPureTab (extracted) with `manifest.json`.
 
 - Done! Setup should launch upon first time visiting a new tab / home.
-![Alt Text](https://image.prntscr.com/image/2-Vx51ynSTCitvrDb2603A.png)
 
 - Once finished, click the gear at the top right to configure.
+
+![Alt Text](https://image.prntscr.com/image/2-Vx51ynSTCitvrDb2603A.png)
 ![Alt Text](https://image.prntscr.com/image/9CekKTPnQOusTNkapZwOyA.png)
