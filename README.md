@@ -23,6 +23,9 @@ Key Features
 
 Showcase (version 1.0)
 -------------------
+###### Image background + Ball style + Custom text
+![Alt Text](https://image.prntscr.com/image/oqi-q7mIT8CNPlbyTy7BcA.png)
+
 ###### Image background + Style1 bottom
 ![Alt Text](https://image.prntscr.com/image/PLwVi63RRuGI-TwLCP9nxw.png)
 
