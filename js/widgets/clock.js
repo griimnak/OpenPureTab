@@ -29,5 +29,13 @@ function tick(){
 }
 
 function clockWidget() {
-  tick();
+  if (settings.widget_ctext.enabled == true && settings.widget_ctext.value != '') {
+    document.getElementById('clocktext').innerHTML= settings.widget_ctext.value;
+  }
+
+  if (settings.widget_clock == 'enabled_style1') {
+    tick();
+  }
+
+  return true;
 }

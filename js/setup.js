@@ -20,7 +20,12 @@ function finalizeSetup() {
       "location": location,
       "theme": theme,
       "background":{"type":"default","value":"default"},
-      "widget_topsites": "disabled"
+      "widget_clock":"enabled_style1",
+      "widget_ctext": {
+        "enabled": "false",
+        "value": ""
+      },
+      "widget_topsites": "enabled_ball"
     };
 
     chrome.storage.sync.set(keys, function() {

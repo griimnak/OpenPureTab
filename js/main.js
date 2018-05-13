@@ -2,6 +2,14 @@ var settings = {};
 
 /* Validate settings */
 function loadSettings() {
+  function isEmpty(obj) {
+    for(var key in obj) {
+      if(obj.hasOwnProperty(key)) {
+        return false;
+      }
+    }
+    return true;
+  }
   // Check if chrome storage is supported
   if (!chrome.storage.sync) {
     alert("Chrome storage is not accessible :(");
@@ -21,16 +29,6 @@ function loadSettings() {
   });
 }
 
-function isEmpty(obj) {
-  for(var key in obj) {
-    if(obj.hasOwnProperty(key)) {
-      return false;
-    }
-  }
-  return true;
-}
-
-
 /* Update settings */
 function updateSettings() {
   // Form data
@@ -40,10 +38,12 @@ function updateSettings() {
   var theme = form['theme'].value;
   var bg = form['bgtype'].value;
   var bgval = 'default';
+  var ctext_value = '';
+  var ctext_check = false;
 
   // Widget specific
+  var widget_clock = form['widget_clock'].value;
   var widget_topsites = form['widget_topsites'].value;
-
 
   function validate() {
     // Fallback
@@ -51,6 +51,11 @@ function updateSettings() {
       location = "New York"
     } else {
       location = form['location'].value;
+    }
+
+    if(widget_clock == 'disabled' && form['clockvalue'].value !== '') {
+      ctext_check = true;
+      ctext_value = form['clockvalue'].value;
     }
 
     chrome.storage.sync.set(
@@ -62,6 +67,11 @@ function updateSettings() {
         "background": {
           "type": bg,
           "value": bgval
+        },
+        "widget_clock": widget_clock,
+        "widget_ctext": {
+          "enabled": ctext_check,
+          "value": ctext_value
         },
         "widget_topsites": widget_topsites
       },
@@ -77,7 +87,7 @@ function updateSettings() {
   } else if (bg == 'image' || bg == 'color') {
     bgval = form['bgvalue'].value;
     if (bgval == '') {
-      alert('You left a required background setting empty.')
+      alert('You left a required background setting empty.');
     } else {
       bg = form['bgtype'].value;
       bgval = form['bgvalue'].value;
@@ -136,6 +146,22 @@ function queryBgType() {
   }
 }
 
+function queryClock() {
+  var container = document.getElementById("clocksettings");
+  var form = document.forms['settings'];
+  var option = form['widget_clock'].value;
+  var image_html = `
+   <input id="clockvalue" name="clockvalue" placeholder="(Optional) display custom text" class="u-full-width" type="text"/>
+   <b class="hint">The text above will be displayed where the clock is displayed.</b>`;
+
+  if (option == 'disabled') {
+    container.innerHTML = image_html;
+    form['clockvalue'].value = settings.widget_ctext.value;
+  } else {
+    container.innerHTML = '';
+  }
+}
+
 
 /* Register */
 function registerWidgets() {
@@ -158,8 +184,10 @@ function openSettingsScreen() {
   form['theme'].value = settings.theme;
   form['widget_topsites'].value = settings.widget_topsites;
   form['bgtype'].value = settings.background.type;
+  form['widget_clock'].value = settings.widget_clock;
 
   queryBgType();
+  queryClock();
 
   // Remove fadeout if exists, display modal
   document.getElementById("settingsModal").classList.remove("fadeOutLoad");
@@ -181,6 +209,7 @@ function draw() {
   document.getElementById('submit_button').addEventListener('click', function() { updateSettings(); });
   document.getElementById('cancel_button').addEventListener('click', function() { closeSettingsScreen(); });
   document.getElementById('bgtype').addEventListener('click', function() { queryBgType(); });
+  document.getElementById('widget_clock').addEventListener('click', function() { queryClock(); });
 
   // Listen for settings Modal click
   document.getElementById("settings").addEventListener('click', function() {

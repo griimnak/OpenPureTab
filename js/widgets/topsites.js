@@ -18,9 +18,10 @@ function topSitesWidget() {
 }
 
 function drawChromeStyle() {
-  function appendChromeStyle(title, url, inner) {
+  function appendChromeStyle(title, url) {
     var html = `
       <a href="${url}" class="tile">
+      <img src="https://www.google.com/s2/favicons?domain=${url}" />
       ${title}
       </a>
     `;
@@ -30,7 +31,7 @@ function drawChromeStyle() {
 
   var inner = `
     <div class="topsites-chrome">
-      <div id="topsites-chrome" style="margin:0 auto;display: inline-table;padding-left:5px;">
+      <div id="topsites-chrome">
 
       </div>
     </div>
@@ -38,18 +39,15 @@ function drawChromeStyle() {
 
   content.innerHTML += inner;
   for(var i=0;i<8;i++) {
-    console.log(data[i]);
     appendChromeStyle(data[i].title, data[i].url);
   }
 }
 
 function drawBallStyle() {
   function appendBallStyle(title, url, inner) {
-    var sliced = title.substring(0, 1);
-
     var html = `
       <a href="${url}" class="tile">
-      ${sliced}
+        <img src="https://www.google.com/s2/favicons?domain=${url}" />
       </a>
     `;
 
@@ -58,15 +56,14 @@ function drawBallStyle() {
 
   var inner = `
     <div class="topsites-ball">
-      <div id="topsites-ball" style="margin:0 auto;display: inline-table;padding-left:5px;">
+      <div id="topsites-ball" style="margin:0 auto;padding-left:5px;">
 
       </div>
     </div>
   `;
 
   content.innerHTML += inner;
-  for(var i=0;i<8;i++) {
-    console.log(data[i]);
+  for(var i=0;i<data.length;i++) {
     appendBallStyle(data[i].title, data[i].url);
   }
 }
@@ -94,7 +91,6 @@ function drawStyle1Top() {
   document.getElementById("settings").style.color = "#efefef";
   content.innerHTML += inner;
   for(var i=0;i<8;i++) {
-    console.log(data[i]);
     appendStyle1Top(data[i].title, data[i].url);
   }
 }
@@ -121,7 +117,6 @@ function drawStyle1Bottom() {
 
   content.innerHTML += inner;
   for(var i=0;i<8;i++) {
-    console.log(data[i]);
     appendStyle1Bottom(data[i].title, data[i].url);
   }
 }
