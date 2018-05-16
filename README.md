@@ -26,8 +26,8 @@ Showcase (version 1.1*)
 ###### Image background + Thumbnails*
 ![Alt Text](https://image.prntscr.com/image/9gB3YU-5QaWLZbc-oU9i8A.png)
 
-###### Image background + Ball style + Custom text
-![Alt Text](https://image.prntscr.com/image/oqi-q7mIT8CNPlbyTy7BcA.png)
+###### Image background + Ball style*
+![Alt Text](https://image.prntscr.com/image/9JC7Via_Q6ablSScmP3zfw.png)
 
 ###### Image background + Style1 bottom
 ![Alt Text](https://image.prntscr.com/image/PLwVi63RRuGI-TwLCP9nxw.png)
