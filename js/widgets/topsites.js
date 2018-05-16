@@ -12,6 +12,8 @@ function topSitesWidget() {
       drawStyle1Bottom();
     } else if (settings.widget_topsites == "enabled_ball") {
       drawBallStyle();
+    } else if (settings.widget_topsites == "enabled_tiny") {
+      drawBallStyle('tiny');
     }
   });
 }
@@ -44,11 +46,9 @@ function drawChromeStyle() {
   chrome.storage.local.get(null, function(allkeys) {
       var er = chrome.runtime.lastError;
       var thumbss = allkeys.thumbs;
-
       if (er) {
         alert(JSON.stringify(er));
       }
-
 
       for(var i=0;i<8;i++) {
         var thumb = '';
@@ -58,30 +58,44 @@ function drawChromeStyle() {
           }
 
         }
-
-
-
       appendChromeStyle(data[i].title, data[i].url, thumb);
     }
   });
 
 }
 
-function drawBallStyle() {
-  function appendBallStyle(title, url, thumb) {
-    var html = `
-      <div class="ball fadeInLoad">
-      <a href="${url}" class="tile">
-        <img class="thumbnail" src="${thumb}" />
-        <img src="https://www.google.com/s2/favicons?domain=${url}" />
-        <div class="icon">
+function drawBallStyle(tiny = '') {
+  function appendBallStyle(title, url, thumb, tiny= '') {
+    if (tiny =='tiny') {
+      var html = `
+        <div class="ball fadeInLoad">
+        <a href="${url}" class="tile" style="border-radius:0;">
+          <img class="thumbnail" src="${thumb}" />
           <img src="https://www.google.com/s2/favicons?domain=${url}" />
-        </div>
+          <div class="icon">
+            <img src="https://www.google.com/s2/favicons?domain=${url}" />
+          </div>
 
-      </a>
-      <b class="tile-text">${title}</b>
-      </div>
-    `;
+        </a>
+        <b class="tile-text">${title}</b>
+        </div>
+      `;
+    } else {
+      var html = `
+        <div class="ball fadeInLoad">
+        <a href="${url}" class="tile">
+          <img class="thumbnail" src="${thumb}" />
+          <img src="https://www.google.com/s2/favicons?domain=${url}" />
+          <div class="icon">
+            <img src="https://www.google.com/s2/favicons?domain=${url}" />
+          </div>
+
+        </a>
+        <b class="tile-text">${title}</b>
+        </div>
+      `;
+    }
+
 
     document.getElementById("topsites-ball").innerHTML += html;
   }
@@ -96,15 +110,12 @@ function drawBallStyle() {
 
   content.innerHTML += inner;
 
-
   chrome.storage.local.get(null, function(allkeys) {
       var err = chrome.runtime.lastError;
       var thumbz = allkeys.thumbs;
-
       if (err) {
         alert(JSON.stringify(err));
       }
-
 
       for(var i=0;i<8;i++) {
         var thumb = '';
@@ -114,14 +125,10 @@ function drawBallStyle() {
           }
 
         }
-
-
-
-      appendBallStyle(data[i].title, data[i].url, thumb);
+      appendBallStyle(data[i].title, data[i].url, thumb, tiny);
     }
   });
 }
-
 
 function drawStyle1Top() {
   function appendStyle1Top(title, url, inner) {
