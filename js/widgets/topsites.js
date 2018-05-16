@@ -68,11 +68,19 @@ function drawChromeStyle() {
 }
 
 function drawBallStyle() {
-  function appendBallStyle(title, url, inner) {
+  function appendBallStyle(title, url, thumb) {
     var html = `
+      <div class="ball fadeInLoad">
       <a href="${url}" class="tile">
+        <img class="thumbnail" src="${thumb}" />
         <img src="https://www.google.com/s2/favicons?domain=${url}" />
+        <div class="icon">
+          <img src="https://www.google.com/s2/favicons?domain=${url}" />
+        </div>
+
       </a>
+      <b class="tile-text">${title}</b>
+      </div>
     `;
 
     document.getElementById("topsites-ball").innerHTML += html;
@@ -80,7 +88,7 @@ function drawBallStyle() {
 
   var inner = `
     <div class="topsites-ball">
-      <div id="topsites-ball" style="margin:0 auto;padding-left:5px;">
+      <div id="topsites-ball" style="margin:0 auto;">
 
       </div>
     </div>
@@ -89,9 +97,29 @@ function drawBallStyle() {
   content.innerHTML += inner;
 
 
-  for(var i=0;i<data.length;i++) {
-    appendBallStyle(data[i].title, data[i].url);
-  }
+  chrome.storage.local.get(null, function(allkeys) {
+      var err = chrome.runtime.lastError;
+      var thumbz = allkeys.thumbs;
+
+      if (err) {
+        alert(JSON.stringify(err));
+      }
+
+
+      for(var i=0;i<8;i++) {
+        var thumb = '';
+        for(var t=0;t<thumbz.length;t++) {
+          if (data[i].url === thumbz[t].url) {
+            thumb = thumbz[t].image;
+          }
+
+        }
+
+
+
+      appendBallStyle(data[i].title, data[i].url, thumb);
+    }
+  });
 }
 
 
