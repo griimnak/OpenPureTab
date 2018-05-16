@@ -90,9 +90,9 @@ function draw() {
   // Listen for settings Modal click
   document.getElementById("settings").addEventListener('click', function() {
     if (chrome.runtime.getURL) {
-      window.location.href = chrome.runtime.getURL('options.html');
+      window.location.href = chrome.runtime.getURL('settings.html');
     } else {
-      window.location.href = "options.html";
+      window.location.href = "settings.html";
     }
   });
 
