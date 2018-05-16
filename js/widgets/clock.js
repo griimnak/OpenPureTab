@@ -72,13 +72,12 @@ function getGoogleDoodle() {
     try {
       var content = parsed.getElementById("hplogo").getElementsByTagName('img')[0].src;
       var clean = content.replace(window.location.origin, "https://google.com");
-      console.log(content)
     } catch(error) {
       console.log(error);
     }
 
     var doodle_html = `
-      <img src="${clean}"/>
+      <img src="${clean}" style="margin-top:-40px;"/>
     `
     document.getElementById('clocktext').innerHTML= doodle_html;
   };
