@@ -11,11 +11,11 @@
 
   "background": {
     "persistent": false,
-    "scripts": ["daemon.js"]
+    "scripts": ["js/daemon.js"]
   },
 
   "options_ui": {
-    "page": "options.html",
+    "page": "settings.html",
     "open_in_tab": true
   },
 
