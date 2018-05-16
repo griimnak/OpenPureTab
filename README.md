@@ -23,23 +23,15 @@ Key Features
 
 Showcase (version 1.1*)
 -------------------
-###### Image background + Thumbnails*
-![Alt Text](https://image.prntscr.com/image/9gB3YU-5QaWLZbc-oU9i8A.png)
+###### Image background + Ball style* + Google Doodle*
+![Alt Text](https://image.prntscr.com/image/gQuUK2-lT8aZIO_gz2uXVw.png)
 
-###### Image background + Ball style*
-![Alt Text](https://image.prntscr.com/image/9JC7Via_Q6ablSScmP3zfw.png)
+###### Default background + Chrome style + Clock
+![Alt Text](https://image.prntscr.com/image/2u0tSTOcRl_d34ylmS3kiw.png)
 
-###### Image background + Style1 bottom
-![Alt Text](https://image.prntscr.com/image/PLwVi63RRuGI-TwLCP9nxw.png)
+###### HEX background + Tiny style + Custom text
+![Alt Text](https://image.prntscr.com/image/70K1vKDvQTWCSlx9lKQqaQ.png)
 
-###### Image background + Chrome style
-![Alt Text](https://image.prntscr.com/image/VpkYV8SHSJmYYwk161BI8g.png)
-
-###### Color background + Style1 top
-![Alt Text](https://image.prntscr.com/image/F0luCx_ySYyD21m11Pc7tw.png)
-
-###### Color background + Chrome style
-![Alt Text](https://image.prntscr.com/image/Ia3itpmxQYONuRwKF9v3Fg.png)
 
 
 <br/><br/>
