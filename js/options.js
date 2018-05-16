@@ -35,7 +35,12 @@ function loadSettings() {
 
 /*
 
-  Append setting values to options.html
+  Screen Trigger
+
+  @req
+  'append' -  Append initial form data and entrance
+  'update' -  Update existing form data
+  'exit'   -  Exit setting screen and load main.html
 
 */
 function screenTrigger(req = '') {
@@ -71,7 +76,7 @@ function screenTrigger(req = '') {
     document.getElementById("settingsModal").classList.add("fadeOutLoad");
     setTimeout(function() {
       window.location.href="main.html";
-    }, 450);
+    }, 350);
   }
 }
 

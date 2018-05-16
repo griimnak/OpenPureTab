@@ -146,6 +146,42 @@ body:before {
   /* thank you Erik J - negate effect of float*/
 }
 
+.flash {
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  top: 30px;
+  -moz-animation: cssAnimation 0s ease-in 3s forwards;
+  -webkit-animation: cssAnimation 0s ease-in 3s forwards;
+  -o-animation: cssAnimation 0s ease-in 3s forwards;
+  animation: cssAnimation 0s ease-in 3s forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+
+@keyframes cssAnimation {
+    to {
+        width:0;
+        height:0;
+        visibility: hidden;
+    }
+}
+@-webkit-keyframes cssAnimation {
+    to {
+        width:0;
+        height:0;
+        visibility:hidden;
+    }
+}
+
 @keyframes fadeInLoad {
   from {
     opacity:0;
@@ -162,46 +198,4 @@ body:before {
   to {
     opacity:0;
   }
-}
-
-
-#snackbar {
-  visibility: hidden;
-  min-width: 250px;
-  margin-left: -125px;
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  border-radius: 2px;
-  padding: 16px;
-  position: fixed;
-  z-index: 1;
-  left: 50%;
-  top: 30px;
-}
-
-#snackbar.show {
-  visibility: visible;
-  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-  animation: fadein 0.5s, fadeout 0.5s 2.5s;
-}
-
-@-webkit-keyframes fadein {
-  from {top: 0; opacity: 0;}
-  to {top: 30px; opacity: 1;}
-}
-
-@keyframes fadein {
-  from {top: 0; opacity: 0;}
-  to {top: 30px; opacity: 1;}
-}
-
-@-webkit-keyframes fadeout {
-  from {top: 30px; opacity: 1;}
-  to {top: 0; opacity: 0;}
-}
-
-@keyframes fadeout {
-  from {top: 30px; opacity: 1;}
-  to {top: 0; opacity: 0;}
 }

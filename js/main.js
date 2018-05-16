@@ -18,6 +18,9 @@ function loadSettings() {
     alert("Chrome storage is not accessible :(");
   }
 
+  chrome.storage.local.get(function(keys) {
+    console.log(keys);
+  });
   chrome.storage.sync.get(function(keys) {
     console.log(keys);
 

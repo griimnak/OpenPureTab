@@ -4,7 +4,6 @@ var data = {};
 function topSitesWidget() {
   chrome.topSites.get(function(response) {
     data = response;
-
     if (settings.widget_topsites == "enabled_default") {
       drawChromeStyle();
     } else if (settings.widget_topsites == "enabled_style1_top") {
@@ -18,11 +17,14 @@ function topSitesWidget() {
 }
 
 function drawChromeStyle() {
-  function appendChromeStyle(title, url) {
+  function appendChromeStyle(title, url, thumb) {
     var html = `
-      <a href="${url}" class="tile">
-      <img src="https://www.google.com/s2/favicons?domain=${url}" />
-      ${title}
+      <a href="${url}" class="tile fadeInLoad">
+        <img class="thumbnail" src="${thumb}"/>
+        <div class="title">
+          <img src="https://www.google.com/s2/favicons?domain=${url}" />
+          <b class="title-text">${title}</b>
+        </div>
       </a>
     `;
 
@@ -38,9 +40,31 @@ function drawChromeStyle() {
   `;
 
   content.innerHTML += inner;
-  for(var i=0;i<8;i++) {
-    appendChromeStyle(data[i].title, data[i].url);
-  }
+
+  chrome.storage.local.get(null, function(allkeys) {
+      var er = chrome.runtime.lastError;
+      var thumbss = allkeys.thumbs;
+
+      if (er) {
+        alert(JSON.stringify(er));
+      }
+
+
+      for(var i=0;i<8;i++) {
+        var thumb = '';
+        for(var t=0;t<thumbss.length;t++) {
+          if (data[i].url === thumbss[t].url) {
+            thumb = thumbss[t].image;
+          }
+
+        }
+
+
+
+      appendChromeStyle(data[i].title, data[i].url, thumb);
+    }
+  });
+
 }
 
 function drawBallStyle() {
@@ -63,6 +87,8 @@ function drawBallStyle() {
   `;
 
   content.innerHTML += inner;
+
+
   for(var i=0;i<data.length;i++) {
     appendBallStyle(data[i].title, data[i].url);
   }

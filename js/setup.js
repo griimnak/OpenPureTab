@@ -32,8 +32,16 @@ function finalizeSetup() {
         "enabled": "false",
         "value": ""
       },
-      "widget_topsites": "enabled_ball"
+      "widget_topsites": "enabled_default"
     };
+
+    var local_keys =
+    {
+      "thumbs" : [
+        {"url": "http://otp.test.com", "image": "img/rain.gif"}
+      ]
+    };
+    chrome.storage.local.set(local_keys);
 
     chrome.storage.sync.set(keys, function() {
       flash('Welcome to OpenPureTab, '+name+'.');
@@ -102,29 +110,6 @@ function flash(message) {
   if (!chrome.storage.local) {
     alert("Local storage is not accessible :(");
   }
-  // Set flash message
-  chrome.storage.local.set({"flashed_msg":message}, function() {
-    chrome.storage.local.get({"flashed_msg":message}, function(data) {
-      if (!isEmpty(data.flashed_msg)) {
-        console.log('==> flash();');
-        var html = `<div class="show" id="snackbar">${data.flashed_msg}</div>`;
-        document.getElementById("flashes").innerHTML = html;
-      }
-    });
-  });
-
-  // Remove html and clear local storage after 3 seconds
-  function remove() {
-    console.log('==> remove();')
-    chrome.storage.local.clear(function() {
-      var error = chrome.runtime.lastError;
-      if (error) { console.error(error) }
-      var msgbox = document.getElementById("snackbar");
-      msgbox.classList.remove("show");
-    });
-  }
-
-  setTimeout(function(){ remove() }, 3000);
 
   function isEmpty(obj) {
     for(var key in obj) {
@@ -134,4 +119,18 @@ function flash(message) {
     }
     return true;
   }
+
+
+  // Set flash message
+  chrome.storage.local.set({"flashed_msg":message}, function() {
+    chrome.storage.local.get({"flashed_msg":message}, function(data) {
+      if (!isEmpty(data.flashed_msg)) {
+        console.log('==> flash();');
+        var html = `<div class="flash fadeInLoad">${data.flashed_msg}</div>`;
+        document.getElementById("flashes").innerHTML = html;
+
+        chrome.storage.local.set({"flashed_msg":""});
+      }
+    });
+  });
 }

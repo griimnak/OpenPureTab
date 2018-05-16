@@ -68,8 +68,32 @@
   height: 128px;
 }
 
-.topsites-chrome .tile img{ padding-right: 3px; }
+.topsites-chrome .tile .title{
+  background-color: #efefef;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  position: absolute;
+  height: 19px;
+  z-index: 25;
+}
 
+.topsites-chrome .tile .title img{
+  display: inline-block;
+}
+.topsites-chrome .tile .title-text{
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  margin-top: 0px;
+  margin-left: 4px;
+}
+.topsites-chrome .tile .thumbnail{
+  width: 154px;
+  height: 128px;
+  position: absolute;
+  z-index: 24;
+}
 
 /* Ball Style */
 .topsites-ball {
