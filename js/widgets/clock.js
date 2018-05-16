@@ -35,7 +35,51 @@ function clockWidget() {
 
   if (settings.widget_clock == 'enabled_style1') {
     tick();
+  } else if (settings.widget_clock == 'disabled_doodle') {
+    getGoogleDoodle();
   }
 
   return true;
+}
+
+function getGoogleDoodle() {
+  var request = new XMLHttpRequest();
+
+  // bind a function to handle request status
+  request.onreadystatechange = function() {
+      if(request.readyState < 4) {
+          // handle preload
+          return;
+      }
+      if(request.status !== 200) {
+          // handle error
+          return;
+      }
+      if(request.readyState === 4) {
+          // handle successful request
+          successCallback();
+      }
+  };
+
+  // open the request to the specified source
+  request.open('GET', "https://www.google.com", true);
+  // execute the request
+  request.send('');
+
+  successCallback = function() {
+    var parser = new DOMParser();
+    var parsed = parser.parseFromString(request.responseText, "text/html");
+    try {
+      var content = parsed.getElementById("hplogo").getElementsByTagName('img')[0].src;
+      var clean = content.replace(window.location.origin, "https://google.com");
+      console.log(content)
+    } catch(error) {
+      console.log(error);
+    }
+
+    var doodle_html = `
+      <img src="${clean}"/>
+    `
+    document.getElementById('clocktext').innerHTML= doodle_html;
+  };
 }
