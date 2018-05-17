@@ -70,14 +70,16 @@ function getGoogleDoodle() {
     var parser = new DOMParser();
     var parsed = parser.parseFromString(request.responseText, "text/html");
     try {
-      var content = parsed.getElementById("hplogo").getElementsByTagName('img')[0].src;
-      var clean = content.replace(window.location.origin, "https://google.com");
+      var content = parsed.getElementById("lga").getElementsByTagName('img')[0].src;
+      var clean = content.replace(window.location.origin, "https://www.google.com");
     } catch(error) {
       console.log(error);
     }
 
     var doodle_html = `
-      <img src="${clean}" style="margin-top:-40px;"/>
+      <a href="https://google.com">
+        <img src="${clean}" style="margin-top:-40px;max-width:272px;max-height:201px;"/>
+      </a>
     `
     document.getElementById('clocktext').innerHTML= doodle_html;
   };

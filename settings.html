@@ -62,8 +62,9 @@
         <h4>Widgets</h4>
         <p>All settings related to widgets and the management of widgets are displayed below.</p>
           <div class="row">
-            <div class="two columns">Top sites</div>
+            <div class="two columns"><label>Top sites</label></div>
             <div class="ten columns">
+              Style:
               <select class="u-full-width" id="widget_topsites">
                 <option value="disabled">Disabled</option>
                 <option value="enabled_default">Chrome style (default)</option>
@@ -72,18 +73,23 @@
                 <option value="enabled_style1_bottom">style1 to bottom</option>
                 <option value="enabled_style1_top">style1 to top</option>
               </select>
-              <b class="hint">Apply a custom frequent sites style, or disable the widget entirely.</b>
+              <b class="hint">The Top Sites widget displays your most frequently visited sites based on <code>chrome.topsites</code> values.
+                You can disable it entirely or chose a variety of styles to display.
+              </b>
             </div>
           </div>
           <div class="row">
-            <div class="two columns">Clock</div>
+            <div class="two columns"><label>"Google" text</label></div>
             <div class="ten columns">
+              Style:
               <select class="u-full-width" id="widget_clock">
-                <option value="disabled">Disabled (default)</option>
-                <option value="disabled_doodle">Disabled (Google Doodle)</option>
-                <option value="enabled_style1">Enabled style1</option>
+                <option value="disabled">Disabled / Custom text</option>
+                <option value="disabled_doodle">Google Doodle</option>
+                <option value="enabled_style1">Clock</option>
               </select>
-              <b class="hint">Apply a custom clock style or disable the clock entirely.</b>
+              <b class="hint">The Clock widget / "Google" text widget manipulates the area where the default google logo / doodle would normally sit.
+                You can use the standard google logo / doodle, apply a digital clock in place of it, or apply custom text in place of it.
+              </b>
               <!-- Options -->
               <div id="clocksettings">
 
