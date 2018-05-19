@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="utf-8">
+  <title>New Tab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="vendor/ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="vendor/skeleton/normalize.css">
+  <link rel="stylesheet" href="vendor/skeleton/skeleton.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="css/widgets.css">
+</head>
+<body>
+  <!-- Flashes container -->
+  <div id="flashes"></div>
+  <!-- Background overlay -->
+  <div id="overlay"></div>
+
+  <div class="content">
+    <!-- Settings icon -->
+    <a class="settingsIcon" id="settings">
+      <i class="ion-android-settings"></i>
+    </a>
+
+
+    <!-- Top spacing -->
+    <div style="margin-top: 185px"></div>
+
+    <!-- Clock Widget -->
+    <div id="digitalclock">
+      <div class="digitalclock">
+        <h1 id="clocktext"></h1>
+      </div>
+    </div>
+
+    <!-- Search Widget -->
+    <div class="search">
+      <input id="search" type="text" name="search" placeholder="Search or type URL"/>
+    </div>
+
+    <!-- Topsites Widget -->
+    <div id="topsites" class="topsites">
+
+    </div>
+  </div>
+
+
+  <script type="text/javascript" src="js/main.js"></script>
+  <script type="text/javascript" src="js/content.js"></script>
+  <!-- Widgets -->
+  <script type="text/javascript" src="js/widgets/Background.js"></script>
+  <script type="text/javascript" src="js/widgets/Clock.js"></script>
+  <script type="text/javascript" src="js/widgets/Topsites.js"></script>
+</body>
+</html>

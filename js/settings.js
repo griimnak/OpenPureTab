@@ -1,47 +1,8 @@
-var settings = {};
-/*
-
-  Load settings
-
-*/
-function loadSettings() {
-  function isEmpty(obj) {
-    for(var key in obj) {
-      if(obj.hasOwnProperty(key)) {
-        return false;
-      }
-    }
-    return true;
-  }
-  // Check if chrome storage is supported
-  if (!chrome.storage.sync) {
-    alert("Chrome storage is not accessible :(");
-  }
-
-  chrome.storage.sync.get(function(keys) {
-    console.log(keys);
-
-    // Trigger first time setup if keys are empty
-    if (isEmpty(keys)) {
-      console.log('Welcome! Opening first time setup..');
-      openSetupScreen();
-    } else {
-      settings = keys;
-      draw();
-    }
-  });
-}
-
-
-/*
-
-  Screen Trigger
-
+/* Screen Trigger
   @req
   'append' -  Append initial form data and entrance
   'update' -  Update existing form data
   'exit'   -  Exit setting screen and load main.html
-
 */
 function screenTrigger(req = '') {
   function structure() {
@@ -75,16 +36,13 @@ function screenTrigger(req = '') {
     // Gracefull exit
     document.getElementById("settingsModal").classList.add("fadeOutLoad");
     setTimeout(function() {
-      window.location.href="main.html";
+      window.location.href="new-tab.html";
     }, 350);
   }
 }
 
 
-/*
-
-  Grab form data and validate update request
-
+/* Grab form data and validate update request
 */
 function updateSettings() {
   // Grab form data
@@ -158,10 +116,7 @@ function updateSettings() {
 }
 
 
-/*
-
-  Sub-option queries
-
+/* Sub-option queries
 */
 function queryBgType() {
   // Grab current form data
@@ -210,10 +165,7 @@ function queryClock() {
 }
 
 
-/*
-
-  Initialize
-
+/* Initialize
 */
 function draw() {
   // Make buttons
@@ -227,7 +179,7 @@ function draw() {
 
 // ==> init();
 function init(settings) {
-  console.log("==> init(options.js);");
+  // console.log("==> init(options.js);");
 
   // Load settings
   settings();
