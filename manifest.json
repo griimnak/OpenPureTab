@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "OpenPureTab",
-  "description": "A 'free', Open sourced new-tab extension for Chrome-based browsers with plenty of customization.",
+  "description": "An open source Chrome-based extension that allows customization of the new-tab page.",
   "version": "1.3",
   "author" : "griimnak",
 
