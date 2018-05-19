@@ -43,7 +43,7 @@ Dev Installation
 
 - Navigate to `chrome://extensions` in your chrome-based browser.
 
-- Enable `developer mode`
+- Enable `Developer mode`
 
 - Click `Load unpacked extensions...` and select the folder that contains OpenPureTab (extracted) with `manifest.json`.
 
