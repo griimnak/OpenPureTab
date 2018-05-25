@@ -35,11 +35,11 @@ function registerWidgets() {
     TopsitesWidget: function() {
       var tsw = new TopsitesWidget();
       switch(settings.widget_topsites) {
-        case 'enabled_default': tsw.drawChromeStyle(); break;
-        case 'enabled_ball': tsw.drawBallStyle(); break;
-        case 'enabled_tiny': tsw.drawBallStyle('tiny'); break;
-        case 'enabled_style1_top': tsw.drawStyle1Top(); break;
-        case 'enabled_style1_bottom': tsw.drawStyle1Bottom(); break;
+        case 'enabled_default': return tsw.drawChromeStyle();
+        case 'enabled_ball': return tsw.drawBallStyle();
+        case 'enabled_tiny': return tsw.drawBallStyle('tiny');
+        case 'enabled_style1_top': return tsw.drawStyle1Top();
+        case 'enabled_style1_bottom': return tsw.drawStyle1Bottom();
       }
     },
 
@@ -52,8 +52,8 @@ function registerWidgets() {
 
       var cw = new ClockWidget();
       switch(settings.widget_clock) {
-        case 'enabled_style1': cw.getClock(); break;
-        case 'disabled_doodle': cw.getDoodle(); break;
+        case 'enabled_style1': return cw.getClock();
+        case 'disabled_doodle': return cw.getDoodle();
       }
     },
 
