@@ -1,9 +1,9 @@
-<h1 align="center">OpenPureTab</h1>
+<h1 align="center">OpenPureTab 1.5</h1>
 
 
-[![stability-stable](https://img.shields.io/badge/stability-stable-green.svg)](https://github.com/emersion/stability-badges#stable)
+[![stability-experimental](https://img.shields.io/badge/stability-experimental-orange.svg)](https://github.com/emersion/stability-badges#experimental)
 
-*WIP*
+*Branch 1.5-Rewrite*
 
 OpenPureTab is an extension for Chrome-based browsers that replaces the default new-tab page with a free and open sourced one, with tons of customization.
 
@@ -12,25 +12,10 @@ OpenPureTab is an extension for Chrome-based browsers that replaces the default 
 
 Written in Pure JavaScript
 
-Key Features
+Rewritten!
 -------------------
-&#10004; Open and well-documented source code<br />
-&#10004; Lightweight, dependency free<br />
-&#10004; Plenty of customization<br />
-&#10004; Simple and straight to the point, not in your face<br />
-<br/>
-
-
-Showcase (version 1.1*)
--------------------
-###### Image background + Ball style* + Google Doodle*
-![Alt Text](https://image.prntscr.com/image/gQuUK2-lT8aZIO_gz2uXVw.png)
-
-###### Default background + Chrome style + Clock
-![Alt Text](https://image.prntscr.com/image/2u0tSTOcRl_d34ylmS3kiw.png)
-
-###### HEX background + Tiny style + Custom text
-![Alt Text](https://image.prntscr.com/image/70K1vKDvQTWCSlx9lKQqaQ.png)
+###### New Chrome69+ style mirrored
+![Alt Text](https://image.prntscr.com/image/S_YXExqqQvO9oc3ntC1DyA.png)
 
 
 
