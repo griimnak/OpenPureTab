@@ -34,6 +34,4 @@ Dev Installation
 
 - Done! Setup should launch upon first time visiting a new tab / home.
 
-- Once finished, click the gear or use the options selection from within OpenPureTab's extension icon at the top right.
-
-![Alt Text](https://image.prntscr.com/image/2-Vx51ynSTCitvrDb2603A.png)
+![Alt Text](https://image.prntscr.com/image/6JV3KLifQyGjCerd2izeHA.png)
