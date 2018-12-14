@@ -29,7 +29,7 @@ TopsitesWidget.prototype.draw_vanilla = function() {
             <a class="tile" href="${url}">
               <div class="edit_handle icon ion-android-more-vertical"></div>
               <div class="circle">
-                <img class="favicon" src="https://www.google.com/s2/favicons?domain=${url}" />
+                <img class="favicon" src="chrome://favicon/size/24@1x/${url}" />
               </div>
               <div class="caption">${title}</div>
             </a>
