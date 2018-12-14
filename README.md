@@ -12,9 +12,12 @@ OpenPureTab is an extension for Chrome-based browsers that replaces the default 
 
 Written in Pure JavaScript
 
-Rewritten!
+Changelog
 -------------------
-###### New Chrome69+ style mirrored
+###### [12/14/18] Snow added, css fixes. Topsites and base rewritten
+![Alt Text](https://i.imgur.com/g7Uakgj.gif)
+
+###### [12/6/18] New Chrome69+ style mirrored 
 ![Alt Text](https://image.prntscr.com/image/S_YXExqqQvO9oc3ntC1DyA.png)
 
 
