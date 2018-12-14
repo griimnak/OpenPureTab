@@ -3,7 +3,7 @@
 
 [![stability-stable](https://img.shields.io/badge/stability-stable-green.svg)](https://github.com/emersion/stability-badges#stable)
 
-*WIP*
+<i>This branch is outdated but stable, click <a href="https://github.com/griimnak/OpenPureTab/tree/OpenPureTab1.5-Rewrite">here</a> for the latest branch.</i>
 
 OpenPureTab is an extension for Chrome-based browsers that replaces the default new-tab page with a free and open sourced one, with tons of customization.
 
