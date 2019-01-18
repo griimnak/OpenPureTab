@@ -12,8 +12,9 @@
   },
 
   "chrome_url_overrides" : { "newtab": "new-tab.html" },
+  "browser_action": { "default_popup": "settings.html" },
   "options_ui": {
-    "page": "settings.html",
+    "page": "settings-advanced.html",
     "open_in_tab": true
   },
 
